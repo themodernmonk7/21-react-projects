@@ -22,20 +22,48 @@ function App() {
     }
   }
 
+  // Remove Tour
+  const removeTour = (id) => {
+    let newTours = tours.filter((tour) => tour.id !== id)
+    setTours(newTours)
+  }
+
   useEffect(() => {
     fetchTours()
-    if (loading) {
-      return <Loading />
-    }
   }, [])
+
+  if (loading) {
+    return (
+      <>
+        <section>
+          <Loading />
+        </section>
+      </>
+    )
+  }
+
+  if (tours.length === 0) {
+    return (
+      <>
+        <section>
+          <h2 className="capitalize font-bold tracking-wide text-3xl text-gray-800">
+            No Tours Left
+          </h2>
+          <button className="refresh-btn" onClick={() => fetchTours()}>
+            refresh page
+          </button>
+        </section>
+      </>
+    )
+  }
 
   return (
     <>
-      <main className="container mx-auto max-w-3xl h-screen">
-        <section className="grid place-items-center">
+      <main>
+        <section>
           <Heading />
-          <div className="mx-5 md:w-4/5 mt-4 grid grid-cols-1 gap-6">
-            <Tours tours={tours} />
+          <div className="mx-5 md:w-4/5 mt-10 grid grid-cols-1 gap-6">
+            <Tours tours={tours} removeTour={removeTour} />
           </div>
         </section>
       </main>

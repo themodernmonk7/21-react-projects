@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+
+@layer components {
+    main {
+        @apply container mx-auto max-w-3xl h-screen
+    }
+
+    section{
+        @apply grid place-items-center pt-10 pb-10
+    }
+
+    .refresh-btn {
+        @apply capitalize tracking-wide bg-yellow-500 px-4 border mt-5 border-black
+    }
+
+    article {
+        @apply shadow-inner hover:shadow-lg rounded-md bg-blue-100 flex flex-col justify-center items-center overflow-hidden
+    }
+
+    .remove-btn {
+        @apply border-2 border-yellow-500 px-8 py-1
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
