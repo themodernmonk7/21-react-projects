@@ -22,7 +22,7 @@ function App() {
       <main className="container mx-auto">
         <Title />
         <Categories categories={categories} filterItems={filterItems} />
-        <Menu items={menuItems} />
+        <Menu props={menuItems} />
       </main>
     </>
   )
