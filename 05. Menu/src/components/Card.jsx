@@ -95,7 +95,7 @@ const Card = ({
           <img
             src={img}
             className=" rounded-3xl w-56 h-[11rem] xl:w-96 xl:h-60 object-cover"
-            alt=""
+            alt={title}
           />
           <button className="add-btn">
             Add{" "}
