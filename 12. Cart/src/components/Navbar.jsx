@@ -1,79 +1,55 @@
 import React from "react"
-import {
-  HiOutlineShoppingBag,
-  HiOutlineUser,
-  HiOutlineSearch,
-} from "react-icons/hi"
-import { AiOutlineHeart } from "react-icons/ai"
+import { useGlobalContext } from "./context"
 
 const Navbar = () => {
+  const { amount } = useGlobalContext()
   return (
-    <nav className=" flex justify-between px-10 py-5 items-center shadow-lg text-sm relative ">
-      {/* Logo */}
-      <div className="flex space-x-6">
-        <h1>
-          Redux <span>Gear</span>{" "}
-        </h1>
-        {/* Menu Items */}
-        <ul className="hidden md:flex space-x-6 uppercase font-semibold text-gray-800">
-          <li>
-            <a href="#">Men</a>
-          </li>
-          <li>
-            <a href="#">Women</a>
-          </li>
-          <li>
-            <a href="#">Kids</a>
-          </li>
-          <li>
-            <a href="#">Home & Living</a>
-          </li>
-          <li>
-            <a href="#">Beauty</a>
-          </li>
-          <li className="relative">
-            <a href="#">Studio</a>
-            <span className="text-primary text-[10px] absolute -top-2 font-semibold ">
-              new
-            </span>
-          </li>
-        </ul>
-      </div>
-      {/* Search */}
-      <form className="w-80 hidden md:flex justify-center items-center border-transparent">
-        <span className="bg-gray-100 px-2 py-2">
-          {" "}
-          <HiOutlineSearch size="20px" />{" "}
-        </span>
-        <input
-          type="text"
-          placeholder="Search for products, brands and more"
-          className=" w-full bg-gray-100 py-2 px-2 rounded-sm"
-        />
-      </form>
+    <>
+      <nav className="bg-white flex justify-between container mx-auto  mt-5 px-2 md:px-8 py-4 rounded-lg shadow-md shadow-fuchsia-500/20">
+        <h2 className="text-3xl font-semibold text-black">
+          use<span className="text-fuchsia-600">Reducer</span>{" "}
+        </h2>
 
-      {/* Profile icons */}
-      <div className="flex space-x-6">
-        <button className=" hidden md:flex flex-col justify-center items-center text-xs">
-          {" "}
-          <HiOutlineUser size="18px" />{" "}
-          <span className="font-semibold">Profile</span>
-        </button>
-        <button className=" flex flex-col justify-center items-center text-xs">
-          {" "}
-          <AiOutlineHeart size="18px" />{" "}
-          <span className="font-semibold">Wishlist</span>
-        </button>
-        <button className=" flex flex-col justify-center items-center text-xs relative">
-          {" "}
-          <HiOutlineShoppingBag size="18px" />{" "}
-          <span className="font-semibold">Bag</span>
-          <span className="bg-primary rounded-full text-white absolute w-4 h4 -top-2 -right-2">
-            4
-          </span>
-        </button>
-      </div>
-    </nav>
+        <div className="px-7 flex space-x-8">
+          <button className="hover:text-fuchsia-600 relative">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-9 h-9"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+              />
+            </svg>
+            <div className=" rounded-full text-center py-1 text-lg absolute -top-5 -right-4 left-4 bg-fuchsia-400 ">
+              <p>{amount}</p>
+            </div>
+          </button>
+
+          <button className="hover:text-fuchsia-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </>
   )
 }
 
