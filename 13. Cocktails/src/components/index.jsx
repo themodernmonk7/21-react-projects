@@ -1,6 +1,7 @@
 import Navbar from "./Navbar"
-import Hero from "./Hero"
 import SearchBar from "./SearchBar"
-import MainPage from "./mainPage"
+import CocktailList from "./CocktailList"
+import Cocktail from "./Cocktail"
+import Loading from "./Loading"
 
-export { Navbar, SearchBar, Hero, MainPage }
+export { Navbar, SearchBar, Cocktail, CocktailList, Loading }
