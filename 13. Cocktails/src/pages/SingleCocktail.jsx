@@ -71,7 +71,7 @@ const SingleCocktail = () => {
 
   const { name, image, info, category, glass, instructions, ingredients } =
     cocktail
-
+  console.log(cocktail)
   return (
     <>
       <section className="container mx-auto max-w-3xl mt-10 flex flex-col justify-center items-center space-y-4 mb-5">

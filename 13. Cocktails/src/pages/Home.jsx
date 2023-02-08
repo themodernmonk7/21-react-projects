@@ -3,8 +3,8 @@ import { SearchBar, CocktailList } from "../components"
 const Home = () => {
   return (
     <>
-      <SearchBar />
-      <CocktailList />
+      {/* <SearchBar /> */}
+      {/* <CocktailList /> */}
     </>
   )
 }
