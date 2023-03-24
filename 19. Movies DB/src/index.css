@@ -1,0 +1,10 @@
+@layer components {
+    .photo:hover .photo-info {
+        transform: translateY(0)
+    }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
