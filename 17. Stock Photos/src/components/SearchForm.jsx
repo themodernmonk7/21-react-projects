@@ -1,7 +1,9 @@
+import { useState } from "react"
 import { AiOutlineSearch } from "react-icons/ai"
 import { BiDotsHorizontalRounded } from "react-icons/bi"
 
 const SearchForm = () => {
+  const [query, setQuery] = useState("")
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("hello")
@@ -19,7 +21,8 @@ const SearchForm = () => {
             <input
               type="text"
               placeholder="Search for free photos"
-              className=" px-3 py-3 w-full font-semibold rounded-md border-none tracking-wide   "
+              className=" px-3 py-3 w-full font-semibold rounded-md border-none tracking-wide"
+              onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleSubmit}>
               <span className=" absolute right-0 top-1 text-gray-500  px-2 py-2 text-center">
